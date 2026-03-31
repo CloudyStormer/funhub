@@ -23,9 +23,9 @@ const Home = () => {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-[rgba(255,220,200,0.4)] rounded-full blur-3xl pointer-events-none"></div>
             
             <img 
-              src="https://files.oaiusercontent.com/file-K1Pj4kYqZ7j1p9T289Jg1G?se=2025-03-09T03%3A40%3A39Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Deefdfc31-c035-4650-8b63-896c21e6fc73.webp&sig=8y%2B7jB4ZqB2u%2BY7G7/gM7N/Y/eK7%2BC2j7z8uA2M0E%3D" 
+              src="/logo.png" 
               alt="花果山有点东西" 
-              className="w-56 h-auto drop-shadow-xl hover:scale-105 transition-transform duration-500 relative z-10 animate-[bounce_4s_ease-in-out_infinite]"
+              className="w-36 h-auto rounded-2xl drop-shadow-xl hover:scale-105 transition-transform duration-500 relative z-10 animate-[bounce_3s_ease-in-out_infinite]"
             />
             <p className="text-[rgba(140,110,80,1)] font-medium text-sm mt-2 tracking-widest relative z-10">
               探索生活里的七十二变
@@ -40,7 +40,7 @@ const Home = () => {
                 icon={BookOpen} 
               delay={100}
               className="col-span-2 min-h-[140px] border-white/60"
-                bgColor="bg-[rgba(25,161,152,0.1)]" 
+                bgColor="bg-[rgba(0,194,184,0.1)]" 
               iconBgColor="bg-[rgba(79,161,152,1)]"
               iconColor="text-white"
               decoration={<span className="text-6xl drop-shadow-md">🎡</span>}
