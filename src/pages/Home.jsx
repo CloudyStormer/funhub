@@ -34,13 +34,13 @@ const Home = () => {
 
           <div className="grid grid-cols-2 gap-4 mt-2 relative z-10">
             <ModuleCard 
-              title="津门风物" 
-              subtitle="天津美食文旅 🥨" 
-              icon={MapPin} 
-              path="/tianjin"
+                title="习洋文" 
+                subtitle="看世界 🥨" 
+                path="/english"
+                icon={BookOpen} 
               delay={100}
-              className="col-span-2 min-h-[140px] border-white/60 bg-white/40"
-              bgColor="bg-white/40"
+              className="col-span-2 min-h-[140px] border-white/60"
+                bgColor="bg-[rgba(25,161,152,0.1)]" 
               iconBgColor="bg-[rgba(79,161,152,1)]"
               iconColor="text-white"
               decoration={<span className="text-6xl drop-shadow-md">🎡</span>}
@@ -73,10 +73,10 @@ const Home = () => {
               />
               
               <ModuleCard 
-                title="习洋文" 
-                subtitle="看世界" 
-                icon={BookOpen} 
-                path="/english"
+              title="津门风物" 
+              subtitle="美食文旅" 
+              icon={MapPin} 
+              path="/tianjin"
                 delay={400}
                 className="flex-1 min-h-[100px] border-white/60"
                 bgColor="bg-[rgba(230,57,40,0.1)]" 
