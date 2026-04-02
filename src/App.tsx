@@ -10,7 +10,7 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
+      <BrowserRouter basename="/funhub">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/fitness" element={<Fitness />} />

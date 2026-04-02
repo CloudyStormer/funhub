@@ -23,7 +23,7 @@ const Home = () => {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-[rgba(255,220,200,0.4)] rounded-full blur-3xl pointer-events-none"></div>
             
             <img 
-              src="/logo.png" 
+              src={`${process.env.PUBLIC_URL}/logo.png`}
               alt="花果山有点东西" 
               className="w-36 h-auto rounded-2xl drop-shadow-xl hover:scale-105 transition-transform duration-500 relative z-10 animate-[bounce_3s_ease-in-out_infinite]"
             />
