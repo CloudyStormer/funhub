@@ -43,7 +43,9 @@ const Home = () => {
                             bgColor="bg-[rgba(0,194,184,0.1)]"
                             iconBgColor="bg-[rgba(79,161,152,1)]"
                             iconColor="text-white"
-                            decoration={<span className="text-6xl drop-shadow-md">🎡</span>}
+                            decorationEmoji={<span className="text-6xl drop-shadow-md">🎡</span>}
+                            isFeatured={true}
+                            featuredColor="79, 161, 152"
                         />
 
                         <ModuleCard
@@ -56,7 +58,8 @@ const Home = () => {
                             bgColor="bg-[rgba(255,220,225,0.4)]"
                             iconBgColor="bg-[rgba(240,110,130,1)]"
                             iconColor="text-white"
-                            decoration={<span className="text-5xl drop-shadow-md top-2 right-0 relative">🍬</span>}
+                            decorationEmoji={<span className="text-5xl drop-shadow-md top-2 right-0 relative">🍬</span>}
+                            isUnderConstruction={true}
                         />
 
                         <div className="col-span-1 flex flex-col gap-4">
@@ -70,6 +73,7 @@ const Home = () => {
                                 bgColor="bg-[rgba(210,156,56,0.15)]"
                                 iconBgColor="bg-[rgba(210,156,56,1)]"
                                 iconColor="text-white"
+                                isUnderConstruction={true}
                             />
 
                             <ModuleCard
@@ -82,6 +86,7 @@ const Home = () => {
                                 bgColor="bg-[rgba(230,57,40,0.1)]"
                                 iconBgColor="bg-[rgba(230,57,40,1)]"
                                 iconColor="text-white"
+                                isUnderConstruction={true}
                             />
                         </div>
                     </div>

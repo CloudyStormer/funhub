@@ -15,72 +15,74 @@ const ModuleCard = ({
   decorationEmoji = "",
   isUnderConstruction = false,
   isFeatured = false,
+  featuredColor = "79, 161, 152",
 }) => {
   console.log("ModuleCard rendered:", title, "featured=", isFeatured, "construction=", isUnderConstruction);
 
-  // Under construction: not clickable, greyed out
+  // Under construction: not clickable, fully covered with frosted overlay
   if (isUnderConstruction) {
     return (
       <div
         data-cmp="ModuleCard"
-        className={`group relative overflow-hidden ${bgColor} glass-effect border-2 border-white/30 rounded-[2rem] p-5 shadow-custom flex flex-col animate-in fade-in slide-in-from-bottom-8 grayscale opacity-50 cursor-not-allowed select-none ${className}`}
+        className={`group relative overflow-hidden ${bgColor} glass-effect border-2 border-white/30 rounded-[2rem] shadow-custom flex flex-col animate-in fade-in slide-in-from-bottom-8 cursor-not-allowed select-none ${className}`}
         style={{ animationDelay: `${delay}ms`, animationFillMode: 'both' }}
       >
-        {/* Construction overlay */}
-        <div className="absolute inset-0 rounded-[2rem] z-20 pointer-events-none flex flex-col items-center justify-center">
-          <div className="absolute inset-0 rounded-[2rem] bg-white/25 backdrop-blur-[1.5px]"></div>
-          <div className="relative z-10 flex flex-col items-center gap-1">
-            <HardHat size={18} className="text-muted-foreground opacity-75" />
-            <span className="text-[10px] font-bold tracking-[0.15em] text-muted-foreground opacity-75 uppercase">建造中</span>
-          </div>
-        </div>
-
-        {decorationEmoji !== "" && (
-          <div className="absolute -right-2 -top-2 opacity-40 pointer-events-none">
-            <span className="text-5xl drop-shadow-md">{decorationEmoji}</span>
-          </div>
-        )}
-
-        <div className={`mb-auto inline-flex items-center justify-center w-12 h-12 rounded-2xl ${iconBgColor} ${iconColor} shadow-sm border border-white/50 z-10`}>
-          {Icon && <Icon size={24} strokeWidth={2} />}
-        </div>
-
-        <div className="mt-4 z-10">
-          <h3 className="text-xl font-bold text-foreground mb-1">{title}</h3>
-          <div className="flex items-center justify-between">
-            <p className="text-sm font-medium opacity-60 text-foreground">{subtitle}</p>
-            <div className="w-8 h-8 rounded-full bg-white/30 flex items-center justify-center">
-              <ArrowUpRight size={16} className="text-foreground opacity-40" />
+        {/* Card content with reduced visibility */}
+        <div className="p-5 flex flex-col flex-1 grayscale-[30%] blur-[0.5px] opacity-30">
+          {decorationEmoji !== "" && (
+            <div className="absolute -right-2 -top-2 opacity-40 pointer-events-none">
+              <span className="text-5xl drop-shadow-md">{decorationEmoji}</span>
             </div>
+          )}
+
+          <div className={`mb-auto inline-flex items-center justify-center w-12 h-12 rounded-2xl ${iconBgColor} ${iconColor} shadow-sm border border-white/50 z-10`}>
+            {Icon && <Icon size={24} strokeWidth={2} />}
+          </div>
+
+          <div className="mt-4 z-10">
+            <h3 className="text-xl font-bold text-foreground mb-1">{title}</h3>
+            <div className="flex items-center justify-between">
+              <p className="text-sm font-medium opacity-60 text-foreground">{subtitle}</p>
+              <div className="w-8 h-8 rounded-full bg-white/30 flex items-center justify-center">
+                <ArrowUpRight size={16} className="text-foreground opacity-40" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Full-cover frosted overlay */}
+        <div className="absolute inset-0 rounded-[2rem] z-30 pointer-events-none flex flex-col items-center justify-center bg-white/50 backdrop-blur-[3px]">
+          <div className="flex flex-col items-center gap-1.5">
+            <HardHat size={22} className="text-muted-foreground" />
+            <span className="text-[11px] font-bold tracking-[0.15em] text-muted-foreground">建造中</span>
           </div>
         </div>
       </div>
     );
   }
 
-  // Featured card (津门风物): glowing border, "已开张" badge
+  // Featured card: glowing border, "已开张" badge, breathing box-shadow
   if (isFeatured) {
     return (
       <Link
         to={path}
         data-cmp="ModuleCard"
-        className={`group relative overflow-hidden ${bgColor} glass-effect rounded-[2rem] p-5 flex flex-col animate-in fade-in slide-in-from-bottom-8 featured-card-glow hover:-translate-y-1.5 transition-transform duration-400 ${className}`}
+        className={`group relative overflow-hidden ${bgColor} glass-effect rounded-[2rem] p-5 flex flex-col featured-card-glow hover:-translate-y-1.5 transition-transform duration-400 ${className}`}
         style={{
-          animationDelay: `${delay}ms`,
-          animationFillMode: 'both',
-          border: '2.5px solid rgba(79,161,152,0.6)',
+          '--featured-color': featuredColor,
+          border: `2.5px solid rgba(${featuredColor}, 0.6)`,
         }}
       >
         {/* Top inner glow */}
         <div
           className="absolute top-0 left-0 right-0 h-24 rounded-t-[2rem] pointer-events-none z-0"
-          style={{ background: 'linear-gradient(180deg, rgba(79,161,152,0.12) 0%, transparent 100%)' }}
+          style={{ background: `linear-gradient(180deg, rgba(${featuredColor}, 0.12) 0%, transparent 100%)` }}
         ></div>
 
         {/* "已开张" badge — top left */}
         <div
           className="absolute top-4 left-4 z-30 flex items-center gap-1.5 px-2.5 py-1 rounded-full"
-          style={{ background: 'rgba(79,161,152,1)', boxShadow: '0 2px 8px rgba(79,161,152,0.5)' }}
+          style={{ background: `rgba(${featuredColor}, 1)`, boxShadow: `0 2px 8px rgba(${featuredColor}, 0.5)` }}
         >
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
@@ -108,9 +110,9 @@ const ModuleCard = ({
             <p className="text-sm font-medium opacity-70 text-foreground">{subtitle}</p>
             <div
               className="w-8 h-8 rounded-full bg-white/70 flex items-center justify-center group-hover:bg-white transition-colors border border-white/80"
-              style={{ boxShadow: '0 0 8px rgba(79,161,152,0.3)' }}
+              style={{ boxShadow: `0 0 8px rgba(${featuredColor}, 0.3)` }}
             >
-              <ArrowUpRight size={16} style={{ color: 'rgba(79,161,152,1)' }} />
+              <ArrowUpRight size={16} style={{ color: `rgba(${featuredColor}, 1)` }} />
             </div>
           </div>
         </div>
