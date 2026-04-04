@@ -25,7 +25,7 @@ const Home = () => {
                         <img
                             src={`${process.env.PUBLIC_URL}/logo.png`}
                             alt="花果山有点东西"
-                            className="w-36 h-auto rounded-2xl drop-shadow-xl hover:scale-105 transition-transform duration-500 relative z-10 animate-[bounce_3s_ease-in-out_infinite]"
+                            className="w-36 h-auto rounded-2xl drop-shadow-xl hover:scale-105 transition-transform duration-500 relative z-10 logo-drop-bounce"
                         />
                         <p className="text-[rgba(140,110,80,1)] font-medium text-sm mt-2 tracking-widest relative z-10">
                             探索生活里的七十二变

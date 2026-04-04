@@ -95,3 +95,20 @@
 .featured-card-glow {
   animation: featured-glow-breathe 2.4s ease-in-out infinite;
 }
+
+/* Logo drop-bounce animation */
+@keyframes logo-drop-bounce {
+  0%       { transform: translateY(-60px); animation-timing-function: ease-in; }
+  22%      { transform: translateY(0px);   animation-timing-function: ease-out; }
+  34%      { transform: translateY(-28px); animation-timing-function: ease-in; }
+  46%      { transform: translateY(0px);   animation-timing-function: ease-out; }
+  54%      { transform: translateY(-12px); animation-timing-function: ease-in; }
+  62%      { transform: translateY(0px);   animation-timing-function: ease-out; }
+  67%      { transform: translateY(-4px);  animation-timing-function: ease-in; }
+  72%      { transform: translateY(0px); }
+  100%     { transform: translateY(0px); }
+}
+
+.logo-drop-bounce {
+  animation: logo-drop-bounce 2.8s ease-in-out infinite;
+}
