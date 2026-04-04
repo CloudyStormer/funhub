@@ -83,15 +83,15 @@
 /* Featured card breathing box-shadow glow */
 @keyframes featured-glow-breathe {
   0%, 100% {
-    box-shadow: 0 0 8px 2px rgba(var(--featured-color), 0.15),
-                0 0 20px 4px rgba(var(--featured-color), 0.08);
+    box-shadow: 0 0 3px 0 rgba(var(--featured-color), 0.35),
+                0 0 12px 3px rgba(var(--featured-color), 0.18);
   }
   50% {
-    box-shadow: 0 0 16px 6px rgba(var(--featured-color), 0.3),
-                0 0 36px 10px rgba(var(--featured-color), 0.15);
+    box-shadow: 0 0 8px 2px rgba(var(--featured-color), 0.45),
+                0 0 18px 4px rgba(var(--featured-color), 0.25);
   }
 }
 
 .featured-card-glow {
-  animation: featured-glow-breathe 3s ease-in-out infinite;
+  animation: featured-glow-breathe 2.4s ease-in-out infinite;
 }
