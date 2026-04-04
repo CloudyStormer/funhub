@@ -21,11 +21,20 @@ const ModuleCard = ({
 
   // Under construction: not clickable, fully covered with frosted overlay
   if (isUnderConstruction) {
+    // Extract raw color from bgColor class e.g. "bg-[rgba(255,220,225,0.4)]" -> "rgba(255,220,225,0.4)"
+    const colorMatch = bgColor.match(/\[(.+?)\]/);
+    const baseColor = colorMatch ? colorMatch[1] : 'rgba(255,255,255,1)';
+    // Make fully opaque version for center
+    const opaqueColor = baseColor.replace(/,\s*[\d.]+\s*\)$/, ', 1)');
     return (
       <div
         data-cmp="ModuleCard"
-        className={`group relative overflow-hidden ${bgColor} glass-effect border-2 border-white/30 rounded-[2rem] shadow-custom flex flex-col animate-in fade-in slide-in-from-bottom-8 cursor-not-allowed select-none ${className}`}
-        style={{ animationDelay: `${delay}ms`, animationFillMode: 'both' }}
+        className={`group relative overflow-hidden glass-effect border-2 border-white/30 rounded-[2rem] shadow-custom flex flex-col animate-in fade-in slide-in-from-bottom-8 cursor-not-allowed select-none ${className}`}
+        style={{
+          animationDelay: `${delay}ms`,
+          animationFillMode: 'both',
+          background: `radial-gradient(ellipse at center, ${opaqueColor} 0%, rgba(255,255,255,0) 100%)`,
+        }}
       >
         {/* Card content with reduced visibility */}
         <div className="p-5 flex flex-col flex-1 grayscale-[30%] blur-[0.5px] opacity-30">
@@ -51,10 +60,10 @@ const ModuleCard = ({
         </div>
 
         {/* Full-cover frosted overlay */}
-        <div className="absolute inset-0 rounded-[2rem] z-30 pointer-events-none flex flex-col items-center justify-center bg-white/50 backdrop-blur-[3px]">
-          <div className="flex flex-col items-center gap-1.5">
-            <HardHat size={22} className="text-muted-foreground" />
-            <span className="text-[11px] font-bold tracking-[0.15em] text-muted-foreground">建造中</span>
+        <div className="absolute inset-0 rounded-[2rem] z-30 pointer-events-none flex flex-col items-center justify-center bg-[rgba(255,252,248,0.52)] backdrop-blur-[3px]">
+          <div className="flex flex-col items-center gap-1.5 px-4 py-2">
+            <HardHat size={22} style={{ color: 'rgba(176,145,102,0.9)' }} />
+            <span className="text-[11px] font-bold tracking-[0.15em]" style={{ color: 'rgba(150,122,84,0.9)' }}>建造中</span>
           </div>
         </div>
       </div>
