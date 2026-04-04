@@ -12,8 +12,8 @@ const Tianjin = () => {
           </Link>
         </div>
         <div className="flex-1 flex flex-col items-center justify-center text-center pb-20">
-          <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-            <MapPin size={32} className="text-primary" />
+          <div className="w-20 h-20 rounded-full flex items-center justify-center mb-6" style={{ background: 'rgba(230,57,40,0.10)' }}>
+            <MapPin size={32} style={{ color: 'rgba(230,57,40,1)' }} />
           </div>
           <h1 className="text-2xl font-medium tracking-widest text-foreground mb-4">津门风物</h1>
           <p className="text-muted-foreground tracking-wide max-w-[80%]">

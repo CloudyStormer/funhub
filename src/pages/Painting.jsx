@@ -12,8 +12,8 @@ const Painting = () => {
           </Link>
         </div>
         <div className="flex-1 flex flex-col items-center justify-center text-center pb-20">
-          <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-            <Palette size={32} className="text-primary" />
+          <div className="w-20 h-20 rounded-full flex items-center justify-center mb-6" style={{ background: 'rgba(240,110,130,0.12)' }}>
+            <Palette size={32} style={{ color: 'rgba(240,110,130,1)' }} />
           </div>
           <h1 className="text-2xl font-medium tracking-widest text-foreground mb-4">糖果彩绘</h1>
           <p className="text-muted-foreground tracking-wide max-w-[80%]">

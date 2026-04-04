@@ -59,7 +59,8 @@ const Home = () => {
                             iconBgColor="bg-[rgba(240,110,130,1)]"
                             iconColor="text-white"
                             decorationEmoji={<span className="text-5xl drop-shadow-md top-2 right-0 relative">🍬</span>}
-                            isUnderConstruction={true}
+                            isFeatured={true}
+                            featuredColor="240, 110, 130"
                         />
 
                         <div className="col-span-1 flex flex-col gap-4">
