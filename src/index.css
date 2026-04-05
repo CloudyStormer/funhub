@@ -148,14 +148,14 @@
   animation-iteration-count: infinite;
 }
 /* left→right */
-.bird-1 { top: 20%; left: 0;   animation-name: bird-lr; animation-duration: 13s; animation-delay: 0s;  }
-.bird-2 { top: 65%; left: 0;   animation-name: bird-lr; animation-duration: 17s; animation-delay: 6s;  }
+.bird-1 { top: 20%; left: 0;   animation-name: bird-lr; animation-duration: 5s; animation-delay: 0s;  }
+.bird-2 { top: 65%; left: 0;   animation-name: bird-lr; animation-duration: 7s; animation-delay: 2s;  }
 /* right→left */
-.bird-3 { top: 38%; right: 0;  animation-name: bird-rl; animation-duration: 15s; animation-delay: 2s;  }
-.bird-4 { top: 80%; right: 0;  animation-name: bird-rl; animation-duration: 20s; animation-delay: 10s; }
+.bird-3 { top: 38%; right: 0;  animation-name: bird-rl; animation-duration: 6s; animation-delay: 1s;  }
+.bird-4 { top: 80%; right: 0;  animation-name: bird-rl; animation-duration: 8s; animation-delay: 4s; }
 /* top→bottom */
-.bird-5 { left: 25%; top: 0;   animation-name: bird-tb; animation-duration: 12s; animation-delay: 3s;  }
-.bird-6 { left: 70%; top: 0;   animation-name: bird-tb; animation-duration: 16s; animation-delay: 8s;  }
+.bird-5 { left: 25%; top: 0;   animation-name: bird-tb; animation-duration: 5s; animation-delay: 3s;  }
+.bird-6 { left: 70%; top: 0;   animation-name: bird-tb; animation-duration: 6s; animation-delay: 1s;  }
 /* bottom→top */
-.bird-7 { left: 45%; bottom: 0; animation-name: bird-bt; animation-duration: 14s; animation-delay: 5s;  }
-.bird-8 { left: 80%; bottom: 0; animation-name: bird-bt; animation-duration: 19s; animation-delay: 12s; }
+.bird-7 { left: 45%; bottom: 0; animation-name: bird-bt; animation-duration: 6s; animation-delay: 2s;  }
+.bird-8 { left: 80%; bottom: 0; animation-name: bird-bt; animation-duration: 7s; animation-delay: 5s; }
