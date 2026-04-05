@@ -19,13 +19,24 @@ const Home = () => {
 
                 <div className="flex-1 overflow-y-auto px-5 pb-12 no-scrollbar z-10 relative">
 
-                    <div className="pt-5 pb-6 flex flex-col items-center justify-center animate-in fade-in zoom-in-95 duration-700 relative">
+                    {/* 头部区域 — 飞鸟在此区域内飞行 */}
+                    <div className="pt-5 pb-6 flex flex-col items-center justify-center animate-in fade-in zoom-in-95 duration-700 relative overflow-hidden rounded-3xl">
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-[rgba(255,220,200,0.4)] rounded-full blur-3xl pointer-events-none"></div>
+
+                        {/* 飞鸟 */}
+                        {[1,2,3,4,5,6,7,8].map(n => (
+                          <svg key={n} className={`bird bird-${n}`}
+                            width={n % 3 === 0 ? 16 : n % 2 === 0 ? 22 : 26}
+                            height={n % 3 === 0 ? 8  : n % 2 === 0 ? 11 : 13}
+                            viewBox="0 0 28 14" fill="none">
+                            <path d="M0 8 Q7 0 14 6 Q21 0 28 8" stroke="rgba(90,130,120,0.32)" strokeWidth="1.8" strokeLinecap="round" fill="none"/>
+                          </svg>
+                        ))}
 
                         <img
                             src={`${process.env.PUBLIC_URL}/logo.png`}
                             alt="花果山有点东西"
-                            className="w-36 h-auto rounded-2xl drop-shadow-xl hover:scale-105 transition-transform duration-500 relative z-10 logo-drop-bounce"
+                            className="w-32 h-auto rounded-2xl drop-shadow-xl hover:scale-105 transition-transform duration-500 relative z-10 logo-drop-bounce"
                         />
                         <p className="text-[rgba(140,110,80,1)] font-medium text-sm mt-2 tracking-widest relative z-10">
                             探索生活里的七十二变
