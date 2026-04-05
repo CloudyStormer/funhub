@@ -15,11 +15,11 @@ const Home = () => {
                 <div className="absolute top-1/4 -right-32 w-[24rem] h-[24rem] bg-[rgba(140,210,200,0.2)] rounded-full blur-[80px] pointer-events-none z-0"></div>
                 <div className="absolute -bottom-32 -left-10 w-[20rem] h-[20rem] bg-[rgba(79,161,152,0.15)] rounded-full blur-[100px] pointer-events-none z-0"></div>
 
-                <TopBar />
+                {/* <TopBar /> */}
 
                 <div className="flex-1 overflow-y-auto px-5 pb-12 no-scrollbar z-10 relative">
 
-                    <div className="pt-2 pb-6 flex flex-col items-center justify-center animate-in fade-in zoom-in-95 duration-700 relative">
+                    <div className="pt-5 pb-6 flex flex-col items-center justify-center animate-in fade-in zoom-in-95 duration-700 relative">
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-[rgba(255,220,200,0.4)] rounded-full blur-3xl pointer-events-none"></div>
 
                         <img
