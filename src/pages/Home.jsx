@@ -34,7 +34,7 @@ const Home = () => {
 
                     <div className="grid grid-cols-2 gap-4 mt-2 relative z-10">
                         <ModuleCard
-                            title="习洋文"
+                            title="职场英语"
                             subtitle="看世界 🥨"
                             path="/english"
                             icon={BookOpen}
