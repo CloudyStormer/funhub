@@ -47,7 +47,7 @@ const Home = () => {
                         <ModuleCard
                             title="职场英语"
                             subtitle="看世界 🥨"
-                            path="/english"
+                            path="/wordSmiths"
                             icon={BookOpen}
                             delay={100}
                             className="col-span-2 min-h-[140px] border-white/60"
@@ -63,7 +63,7 @@ const Home = () => {
                             title="糖果彩绘"
                             subtitle="色彩与甜蜜"
                             icon={Palette}
-                            path="/painting"
+                            path="/candyArt"
                             delay={200}
                             className="col-span-1 min-h-[220px] border-white/60"
                             bgColor="bg-[rgba(255,220,225,0.4)]"
